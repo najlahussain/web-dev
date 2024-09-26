@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Using form element</h1>
+    <form action="">
+        <fieldset>
+            <legend>Login Details</legend>
+            <p>
+                <label for="username">Name:</label>
+                <input type="text" id="username" name="username" required="required">
+            </p>
+            <p>Password: <input type="password" name="pass"></p>
+            <p>Email: <input type="email" name="email" id=""></p>
+        </fieldset>
+        <p>
+            Gender:
+            <input type="radio" name="gender" id=""> Male
+            <input type="radio" name="gender" id=""> Female
+        </p>
+        <!-- for multiple lines input -->
+        <p>
+            Enter Comments: <textarea name="comments" id="" cols="50" rows="10"></textarea>
+        </p>
+        <p>Number of years of experience: <input type="number" name="num" id="" min="0" max="10"></p>
+        <p>
+            Select color of your choice: <input type="color" name="color" id="">
+        </p>
+        <p>
+            Enter Birthday: <input type="date" name="bday" id="" max="2024-01-01">
+            <!-- year-month-date -->
+        </p>
+        <p>
+            <select name="country" id="">
+                <option value="pak">Pakistan</option>
+                <option value="china">China</option>
+                <option value="america">USA</option>
+                <option value="india">India</option>
+            </select>
+        </p>
+        <input type="button" value="button">
+        <p>Agree to terms and conditions:
+            <input type="checkbox" name="gender" id="">
+        </p>
+        <p><input type="submit" value="Submit"></p>
+    </form>
+</body>
+
+</html>

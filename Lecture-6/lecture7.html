@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Box Sizing */
+        .with,
+        .without {
+            border: 2px solid green;
+
+            margin: 10px;
+            padding: 20px;
+            width: 300px;
+            height: 80px;
+        }
+
+        .with {
+            /* box-sizing: content-box; (actual width + padding +margin) */
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        /* Pseudo Class */
+        /* unvisited link */
+        p a:link {
+            color: red;
+        }
+
+        /* visited link */
+        p a:visited {
+            color: green;
+        }
+
+        /* mouse over link */
+        p a:hover {
+            color: hotpink;
+        }
+
+        /* selected link */
+        p a:active {
+            color: blue;
+        }
+
+        /* Pseudo elements selectors */
+        p.pseudo::before {
+            content: 'content inserted before para';
+            color: pink;
+        }
+
+        p.pseudo::after {
+            content: 'content inserted after para';
+            color: pink;
+        }
+
+        p.pseudo::first-line {
+            color: #ff0000;
+            font-variant: small-caps;
+        }
+
+        h4.pseudo2::first-letter {
+            color: blue;
+            font-variant: small-caps;
+        }
+
+        .markerEx::marker {
+            color: red;
+            font-size: 23px;
+        }
+
+        .selectionEx::selection {
+            color: red;
+            background: yellow;
+        }
+        /* Attribute Selector */
+        input[type="text"] {
+            width: 150px;
+            display: block;
+            margin-bottom: 10px;
+            background-color: yellow;
+        }
+
+        input[type="button"] {
+            width: 120px;
+            margin-left: 35px;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Boxsizing -->
+    <p class="without">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi commodi adipisci recusandae, sed
+        quibusdam voluptatibus! Est similique omnis repudiandae nostrum!</p>
+    <p class="with">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi commodi adipisci recusandae, sed
+        quibusdam voluptatibus! Est similique omnis repudiandae nostrum!</p>
+
+    <!-- /* Pseudo Class */ -->
+    <h2>Styling a link depending on state</h2>
+
+    <p><b><a href="/" target="_blank">This is a link</a></b></p>
+    <p><b>Note:</b> a:hover MUST come after a:link and a:visited in the CSS definition in order to be effective.</p>
+    <p><b>Note:</b> a:active MUST come after a:hover in the CSS definition in order to be effective.</p>
+
+    <!-- Pseudo Element selectors -->
+    <p class="pseudo">You can use the ::first-line pseudo-element to add a special effect to the first line of a text.
+        Some more text.</p>
+
+    <h4 class="pseudo2">You can use the ::first-letter pseudo-element to add a special effect to the first letter of a
+        text. </h4>
+
+    <ul>
+        <li class="markerEx">Coffee</li>
+        <li class="markerEx">Tea</li>
+        <li class="markerEx">Milk</li>
+    </ul>
+
+    <ol>
+        <li class="markerEx">First</li>
+        <li class="markerEx">Second</li>
+        <li class="markerEx">Third</li>
+    </ol>
+
+    <h1 class="selectionEx">Select some text on this page:</h1>
+
+    <p class="selectionEx">This is a paragraph.</p>
+    <div class="selectionEx">This is some text in a div element.</div>
+        
+    <!-- Attribute selector. Styling forms -->
+    <form name="input" action="" method="get">
+        Firstname:<input type="text" name="Name" value="Peter" size="20">
+        Lastname:<input type="text" name="Name" value="Griffin" size="20">
+        <input type="button" value="Example Button">
+      </form>
+      
+</body>
+
+
+</html>

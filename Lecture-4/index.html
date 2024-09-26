@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Course</title>
+    <link rel="stylesheet" href="/css/syles.css" type="text/css">
+    <style>
+        /* Example 1: */
+        /* td{
+            border: 1px solid blue;
+            padding: 15px;
+        }
+        .one{
+            empty-cells: show;
+        }
+        .two{
+            empty-cells: hide;
+        } */
+    
+        /* <!-- Example 2  --> */
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #111111;
+        }
+
+        table {
+            width: 600px;
+        }
+
+        th, td {
+            padding: 7px 10px 10px 10px;
+        }
+        th {
+            background-color: cornflowerblue;
+            text-transform: uppercase;
+            font-size: 90%;
+            border-bottom: 2px solid black;
+            border-top: 1px solid grey;
+            text-align: left;
+        }
+        tr.even {
+            background-color: #efefef;
+        }
+        td:hover{
+            background-color: #c3e6e5;
+        }
+        .money {
+            text-align: right;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Example 1 -->
+    <!-- <table class="one">
+        <tr>
+            <td>1</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td></td>
+        </tr>
+    </table>
+    <table class="two">
+        <tr>
+            <td>1</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td></td>
+        </tr>
+    </table> -->
+    <!-- <table></table> -->
+    
+    <!-- Example 2  -->
+    <h1>First Edition Auctions</h1>
+    <table>
+        <tr>
+            <th>Author</th>
+            <th>Title</th>
+            <th>Reserve Price</th>
+            <th>Current Bid</th>
+        </tr>
+        <tr class="even">
+            <td>E. E Cumings</td>
+            <td>Tulips & Chimneys</td>
+            <td class="money">$2,000.00</td>
+            <td class="money">$2,100.00</td>
+        </tr>
+        <tr>
+            <td>A. A Cumings</td>
+            <td>Tulips & Chimneys</td>
+            <td class="money"></td>
+            <td class="money">$3,100.00</td>
+        </tr>
+        <tr class="even">
+            <td>B. B Cumings</td>
+            <td>Tulips & Chimneys</td>
+            <td class="money">$4,000.00</td>
+            <td class="money">$4,100.00</td>
+        </tr>
+        <tr>
+            <td>D. D Cumings</td>
+            <td>Tulips & Chimneys</td>
+            <td class="money"></td>
+            <td class="money">$5,100.00</td>
+        </tr>
+     </table>
+</body>
+
+</html>
