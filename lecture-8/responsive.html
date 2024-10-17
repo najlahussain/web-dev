@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        img {
+            max-width: 100%;
+        }
+        .container-two{
+            /* font-size: 10px; */
+            display: flex;
+            gap: 20px;
+            align-items: center;
+
+        }
+        /* .container-two p {
+            display: none;
+        } */
+        @media screen and (min-width: 600px) {
+            .container-two{
+                color: red;    
+                font-size: 1rem;
+                flex-direction: column;
+            }   
+        }
+        @media screen and (min-width: 1000px) {
+            .container-two{
+                color: green;    
+                font-size: 1.6rem;
+                flex-direction: row;
+            }   
+        }
+        .backgroundImage {
+            max-width: 100%;
+            height: 300px;
+            background-image: url("/images.jpeg");
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* .container-two p{
+            font-size: 2em;
+        } */
+
+      /*   .container-two {
+                font-size: 1rem;
+                color: red;
+        }
+        h1{
+                text-align: center;
+        }
+        p{
+                text-align: justify;
+        }
+        .backgroundImage {
+            max-width: 100%;
+            height: 250px;
+            background-image: url("/images.jpeg");
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            color: white;
+            text-align: center;
+        }
+
+        .backgroundImage h2 {
+            box-sizing: border-box;
+        }
+        @media screen and (min-width: 601px) {
+            .container-two {
+                font-size: 1.3rem;
+                color: green;
+                margin: 30px;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+            }
+            .backgroundImage {
+                height: 400px;
+            }
+        }
+        
+        @media screen and (min-width: 1024px) {
+            .container-two {
+                display: flex;
+                flex-direction: row;
+                margin: 50px;
+                gap: 20px;
+                font-size: 1.5rem;
+                color: blue;
+            }
+        
+            .backgroundImage {
+                height: 700px;
+            }
+        }
+
+*/
+        
+    </style>
+</head>
+
+<body>
+ <div class="container-two">
+        <div class="image">
+            <img src="/hero.jpeg" alt="hero">
+        </div>
+        <div class="text">
+            <h1>Responsive Web Design</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt eum id facilis. Libero quod nulla
+                eveniet reiciendis excepturi. Eligendi aperiam corporis delectus ut totam nemo esse deleniti sequi
+                nesciunt hic.</p>
+        </div>
+    </div>
+    <div class="backgroundImage">
+        <h2>Background Image</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem accusamus totam aliquid, deserunt quis fuga nisi reprehenderit alias, ea unde eius laborum quam aut non, voluptatibus similique incidunt rem numquam.</p>
+    </div>
+    <p class="text-red-500 text-lg p-[21px] flex mx-20">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem numquam sunt natus repellat odit! Similique nemo tempore perferendis odio sit. Ducimus quasi voluptates suscipit placeat harum mollitia aut, illo expedita.</p>
+    
+    
+
+</body>
+
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display</title>
+    <style>
+        /* .box::before {
+            clear: both;
+        } */
+
+        .display {
+            margin: auto;
+            width: 200px;
+            text-align: center;
+        }
+
+        a {
+            /* margin: auto; */
+            width: 200px;
+            display: inline-block;
+            background-color: aqua;
+            border: 2px solid black;
+        }
+
+        .display2 {
+            margin: auto;
+            width: max-content;
+        }
+
+        .square {
+            padding: 10px;
+            border: 1px solid black;
+            width: 100px;
+            margin: 5px;
+            display: inline-block;
+        }
+
+        #sq1 {
+            background-color: red;
+            left: 50px;
+            top: 50px;
+            position: absolute;
+        }
+
+        #sq2 {
+            position: relative;
+            top: 50px;
+            left: 10px;
+            background-color: pink;
+        }
+
+        #sq3 {
+            background-color: grey;
+            /* position: fixed; */
+            right: 10px;
+            bottom: 50px;
+        }
+
+        #sq4 {
+            top: 50px;
+            background-color: black;
+            position: sticky;
+            color: white;
+        }
+
+        .position {
+            position: relative;
+            margin-top: 50px;
+            height: 500px;
+            background-color: bisque;
+        }
+
+        #opacity img {
+            display: block;
+            width: 300px;
+            margin: auto;
+            opacity: 0.5;
+        }
+
+        #opacity {
+            background-color: rgb(0, 0, 0);
+            margin-top: 30px;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        #opacity h2 {
+            color: white;
+            position: absolute;
+            top: 80px;
+            left: 400px;
+        }
+
+        #bgImg {
+            background: url("/images.jpeg") no-repeat center;
+            background-size: cover;
+            opacity: 90%;
+            height: 400px;
+            border: 2px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #bgImg p {
+            color: rgb(250, 250, 250, 1.0);
+            text-align: center;
+        }
+
+        #flexTut {
+            color: white;
+            background-color: blueviolet;
+            display: flex;
+            height: 400px;
+            /* flex-wrap: wrap; */
+            align-items: center;
+        }
+
+        #flexTut div {
+            background-color: black;
+            margin: 20px;
+            padding: 20px;
+        }
+
+        .last {
+            /* display: inline; */
+            width: 150px;
+            margin: auto;
+        }
+        .last > *{
+            display: inline-block;
+            
+        }
+    </style>
+</head>
+
+<body>
+    <div class="display">
+        <h3>Display: inline/block/inline-block</h3>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates, dolorem!</p>
+    </div>
+    <div class="display2">
+        <a id="one" href="/">Google</a>
+        <a href="/">Facebook</a>
+    </div>
+    <div>
+        <h3>Boxsizing & float</h3>
+        <div class="box" style="border: 2px solid red; width:33.33%; float:left; padding:5px; box-sizing: border-box;">
+        </div>
+        <div style="border: 2px solid blue;width:33.33%; float:left; padding:5px; box-sizing: border-box;"></div>
+        <div style="border: 2px solid green;width:33.33%; float:right; padding:5px;box-sizing: border-box;"></div>
+    </div>
+    <div class="position">
+        <h3>CSS Position</h3>
+        <h4>The &lt;div&gt; is positioned relative</h4>
+        <div class="square" id="sq1">ABSOLUTE</div>
+        <div class="square" id="sq2">RELATIVE</div>
+        <div class="square" id="sq3">FIXED</div>
+        <div class="square" id="sq4">STICKY</div>
+    </div>
+
+    <!-- Opacity -->
+    <!-- <section id="opacity">
+        <img src="/images.jpeg" alt="bg">
+        <h2>Web 3.0</h2>
+    </section> -->
+
+    <!-- Background Image -->
+    <!-- <section id="bgImg">
+        <p>Text</p>
+    </section> -->
+
+    <section id="flexTut">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div style="order: -2;">4</div>
+        <div  style="order: -1;">5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+    </section>
+    <div class="last">
+        <h2>test</h2>
+        <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+
+</body>
+
+</html>
