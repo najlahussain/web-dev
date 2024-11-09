@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script> 
+        document.addEventListener("DOMContentLoaded", function() {
+            const array = ["a", "b", "c"];
+            let items = document.getElementById("list1");
+
+            // Iterate over the array and create list items
+            array.forEach(item => {
+                const listItem = document.createElement("li");
+                listItem.textContent = item;
+                items.appendChild(listItem);
+            });
+        });
+    </script> -->
+</head>
+
+<body>
+    <section>
+        <ul id="list1"></ul>
+        <div id="para"></div>
+    </section>
+    <section id="demo"></section>
+        
+    <script>
+        const fruits = ["Banana", "Orange", "Apple", "Mango"];
+        let fLen = fruits.length;
+
+        let text = "<ul>";
+        for (let i = 0; i < fLen; i++) {
+            text += "<li>" + fruits[i] + "</li>";
+        }
+        text += "</ul>";
+
+        document.getElementById("demo").innerHTML = text;
+        
+        
+        const array = ["a", "b", "c"];
+        let items = document.getElementById("list1");
+
+        array.forEach(item => {
+            const listItem = document.createElement("li");
+            listItem.textContent = item;
+            items.appendChild(listItem);
+        });
+        let data = document.getElementById("para");
+
+        item1 = document.createElement("h1");
+        item2 = document.createElement("p");
+        item3 = document.createElement("img");
+
+        item1.textContent = "Heading";
+        item2.textContent = "lorem 123";
+        item3.src = "/kitten.jpeg";
+
+        item1.style.color = "red";
+        item2.style.fontStyle = "italic";
+        item3.style.width = "100px";
+
+        data.appendChild(item1);
+        data.appendChild(item2);
+        data.appendChild(item3);
+    </script>
+</body>
+
+</html>

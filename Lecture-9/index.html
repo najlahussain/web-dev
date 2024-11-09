@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <button type="button" onclick="document.getElementById('hello').innerHTML = 'Hello World!!'">Click Me!</button>
+        <button type="button" onclick="document.getElementById('hello').innerHTML = ''">Reset</button>
+        <button type="button" onclick="document.getElementById('hello').innerHTML = Date()">Display Date & Time</button>
+        <p id="hello"></p>
+    </div>
+    <div>
+        <button onclick="document.getElementById('animal').src='kitten.jpeg'">Cat Lover!</button>
+        <img id="animal" src="" alt="animal">
+        <button onclick="document.getElementById('animal').src='/puppy.jpeg'">Dog Lover!</button>
+    </div>
+    <div>
+        <h2>What Can JavaScript Do?</h2>
+        <p id="demo">JavaScript can change the style of an HTML element.</p>
+        <button type="button" onclick="document.getElementById('demo').style.fontSize='35px'">Click Me!</button>
+    </div>
+    <form>
+        First Name:
+        <input type="text" id="first">
+        <br>
+        Last Name:
+        <input type="text" id="last">
+        <br>
+        <input type="button" value="Generate Email" onclick="generateEmail(this.form)">
+    </form>
+    <p id="email"></p>
+    <script>
+        console.log("test");
+        function generateEmail(f) { 
+            console.log(f.elements["first"].value);
+            document.getElementById("email").innerHTML = f.elements["first"].value +"." + f.elements["last"].value+ Math.floor(Math.random()*100) + "@gmail.com";
+        }
+    </script>
+</body>
+
+</html>
