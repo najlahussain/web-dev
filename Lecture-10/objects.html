@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id = "demo"></p>
+    <script>
+        let student = {
+            regNo : "12345",
+            name : "Sayem",
+            Courses : {
+                course1 : "AI",
+                course2 : "Web",
+                course3 : "Chinese"
+            }
+        }
+        //deleting a property on an object
+        delete student.Courses.course3;
+        let display = "";
+        //for in loop is used to iterate over property values
+        for(x in student.Courses) {
+            display += x + "<br>";    
+        }
+        // coverting javascript object to JSON
+        let jsonString = JSON.stringify(student);
+
+        console.log(jsonString); 
+        // document.getElementById("demo").innerHTML = jsonString;
+
+        //creating object from JSON string
+        let obj = JSON.parse(jsonString);
+        document.getElementById("demo").innerHTML = obj.name;
+        
+    </script>
+</body>
+</html>

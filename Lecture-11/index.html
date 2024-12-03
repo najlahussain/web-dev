@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+<body onload="loadWindowProps()">
+    <h1 class="flex justify-center font-bold">Using window Object</h1>
+    <section class="p-5 text-sm">
+        <p class="mb-5" id="location">
+            This page's URL information is:
+            <span class="italic" id="loc"></span>
+        </p>
+        <p class="mb-5" id="browser"></p>
+        <p class="mb-5" id="screen"></p>
+        <p class="mb-5"  id="history"></p>
+    </section>
+    <script>
+        function loadWindowProps(){
+            let data1 = document.getElementById('loc');
+            let data2 = document.getElementById('browser');
+            let data3 = document.getElementById('screen');
+            let data4 = document.getElementById('history');
+            
+            data1.innerHTML += window.location.href;
+            data2.innerHTML = "This page's Navigator information is: " + window.navigator.userAgent;
+            data3.innerHTML = "This page's Screen width is: " + window.screen.width;
+            // data4.innerHTML = "This page's URL information is: " + window.history.; 
+        }
+    </script>
+</body>
+</html>

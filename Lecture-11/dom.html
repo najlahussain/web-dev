@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <div id="container">
+        <p id="demo1" class="hello">demo1</p>
+        <button>Click Me</button>
+        
+    </div>
+   
+    <script>
+        
+        const para = document.querySelector("#demo1");
+        const btn = document.querySelector("button");
+        let dark = false;
+        btn.addEventListener("click", ()=> {
+            para.innerHTML = "You have clicked a button";
+            if(!dark){
+                document.body.style.backgroundColor = "black";
+                document.body.style.color = "white"
+                dark = true;
+            }
+            else{
+                document.body.style.backgroundColor = "white";
+                document.body.style.color = "black"
+            }
+        })
+        
+        
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ATM Simulation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f7f7f7;
+      margin: 0;
+      padding: 20px;
+    }
+    .atm-container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      background: white;
+      border-radius: 5px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .atm-container input, .atm-container button {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      font-size: 16px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    .atm-container button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    .atm-container button:hover {
+      background-color: #0056b3;
+    }
+    .message {
+      margin-top: 10px;
+      font-size: 16px;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="atm-container">
+    <div id="loginSection">
+      <h2>ATM Login</h2>
+      <input type="text" id="userId" placeholder="Enter User ID">
+      <input type="password" id="pin" placeholder="Enter PIN">
+      <button id="loginButton">Log In</button>
+      <div id="loginMessage" class="message"></div>
+    </div>
+
+    <div id="atmSection" class="hidden">
+      <h2>ATM Menu</h2>
+      <button id="checkBalance">Check Balance</button>
+      <button id="depositMoney">Deposit Money</button>
+      <button id="withdrawMoney">Withdraw Money</button>
+      <button id="logoutButton">Log Out</button>
+      <div id="atmMessage" class="message"></div>
+    </div>
+  </div>
+  <script src="task20.js"></script>
+</body>
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+</head>
+
+<body>
+    <!-- for of loop -->
+    <!-- iterating over strings -->
+    <p id="iterator"></p>
+    <p id="demo"></p>
+    <script>
+        // <!-- for of loop -->
+
+        let word = "hello";
+        let display = "";
+        for (const x of word)
+            display += x.toUpperCase();
+        // document.getElementById("iterator").innerHTML = display;
+
+        // <!-- iterating over strings -->
+        const letters = ["a", "b", "c"];
+        let text = "";
+        for (const x of letters) {
+            text += x + " <br>";
+        }
+        // document.getElementById("iterator").innerHTML = text;
+
+        //objects in javascript
+        // let c = "Suzuki Swift"
+        let car1 = {
+            make: "honda",
+            model: 2010,
+        }
+        // document.getElementById("iterator").innerHTML = car1["make"];
+        // document.getElementById("demo").innerHTML = car1.model;
+
+        const person = {
+            firstName: "Ali",
+            lastName: "Hassan",
+            id: 5566,
+            print: function () { },
+            fullName: function () {
+                return this.firstName + " " + this.lastName;
+            },
+            display: function () {
+                return "Id: " + this.id + this.fullName();
+            }
+        };
+
+        // document.getElementById("iterator").innerHTML = person.display();
+        // document.getElementById("iterator").innerHTML = person["address"];
+
+        const car = {
+            make: "honda",
+            owner: {
+                name: "Haider",
+                licenseNo: "1234",
+            }
+        }
+        // document.getElementById("iterator").innerHTML = car.owner.name;
+
+        //Destructuring
+        //used to unpack object properties
+        const city = {
+            cityName: "Islamabad",
+            cityArea: 12345,
+        }
+
+        // let { cityName, cityArea } = city;
+        // or (order doesn't matter)
+        let { cityArea, cityName } = city;
+        //property alias
+        let { cityArea: area } = city;
+        // document.getElementById("iterator").innerHTML = area;
+
+        //array destructuring
+        // Create an Array
+        const fruits = ["Bananas", "Oranges", "Apples", "Mangos"];
+
+        // Destructuring
+        let [fruit1, fruit2] = fruits;
+        // document.getElementById("iterator").innerHTML = fruit2;
+        let [f1, , , f4] = fruits;
+        // document.getElementById("iterator").innerHTML = f4;
+        const array = [10, 20, 30, 40, 50, 60];
+        //rest property will store all remaining values into a new array, rest element is last element in a destructuring pattern
+        const [a1, a2, ...array1] = array;
+        // document.getElementById("iterator").innerHTML = array1;
+
+        // == vs === operator
+        let num1 = 5;
+        let num2 = "5"
+        let a = [];
+        let b = 0;
+        let c = "0";
+        // document.getElementById("iterator").innerHTML = (a == false);
+        // document.getElementById("iterator").innerHTML = (num1 == num2);
+        // document.getElementById("demo").innerHTML = (num1 === num2);
+
+        //call() and apply() methods
+        //call() allows you to call function of one object with another object's values and the object is passed as a parameter
+        //apply() is same as call, however, in apply you pass arguments as array
+        const x1 = {
+            y: "y",
+            z: "z",
+        }
+        const data = {
+            func1: function () {
+                return this.y + this.z;
+            },
+            func2: function (y1, z1) {
+                return this.y + this.z + " new: " + y1 + z1;
+            }
+        }
+        // document.getElementById("iterator").innerHTML = data.func1.call(x1);
+        // document.getElementById("iterator").innerHTML = data.func2.call(x1, "x22", "x33");
+        // document.getElementById("iterator").innerHTML = data.func1.apply(x1);
+        // document.getElementById("demo").innerHTML = data.func2.apply(x1, ["y12", "z12"]);
+
+        //bind() function. binds a method of one object to properties of other object
+        const bind1 = {
+            b1: "b1 of bind1",
+            method1: function () {
+                return this.b1;
+            }
+        }
+        const bind2 = {
+            b1: "b1 of bind2",
+        }
+        let newbind = bind1.method1.bind(bind2);
+        document.getElementById("demo").innerHTML = newbind();
+
+        //Function Closures
+        // Why Closures Are Useful
+        // Closures are powerful for:
+
+        // Creating private variables that are not accessible from the outside.
+        // Preserving state, as shown in the counter example.
+        // Implementing factory functions and currying, where functions remember data across calls.
+
+        // function createCounter() {
+        //     let counter = 0;    
+        //     return function () { counter += 1; return counter }
+        // };
+
+        // let add = createCounter();
+        // add();
+        // add();
+        // add();
+        // document.getElementById("demo").innerHTML = add();
+
+        //Spread Operator
+        const data1 = ["Mon", "Tues", "Wed"];
+        const data2 = ["Thursday", "Friday", "Sat", "Sun"];
+        const data3 = [...data1, ...data2];
+        // document.getElementById("demo").innerHTML = data3[4];
+
+        //spread operator can be used to pass each element of an array as individual arguments
+        function addThreeNumbers(a, b, c) {
+            return a + b + c;
+        }
+        const numbers = [1, 2, 3];
+        console.log(addThreeNumbers(...numbers));
+
+        //rest parameter allows a function to treat indefinite number of arguments as an array
+        function addNumbers(...numbers) {
+            return numbers.reduce((num, total) => total += num);
+        }
+        // console.log(addNumbers(1,2,3,4,5));
+
+        //accessing variables within closures   
+        function createCounter() {
+            let counter = 0;
+            function increment() {
+                counter += 1;
+                return counter;
+            }
+            //getCounter is defined as a property of increment. Assigning a function creates a dynamic reference to the counter variable in the closure, whereas directly assigning counter just copies its current static value. 
+            increment.getCounter = function () {
+                return counter;
+            };
+            return increment;
+        }
+
+        let add = createCounter();
+        add();
+        add();
+        add();
+        document.getElementById("iterator").innerHTML = add.getCounter();  // Displays 4
+        add.setCounter(0);
+        
+    </script>
+</body>
+
+</html>

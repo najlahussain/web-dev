@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Javascript practice questions</h1>
+    <!-- task 16 -->
+    <h2>Button Operation</h2>
+    <button id="task16">Click Me!</button>
+
+    <!-- Task 17 -->
+    <h2>Calculator</h2>
+    <form id="calcForm">
+        Number 1: <input type="text" name="num2" id="num1"><br>
+        Number 2: <input type="text" name="num2" id="num2"><br>
+        Result: <input type="text" name="num2" id="result" disabled><br>
+        <select name="" id="selectedOp">
+            <option value="add">add</option>
+            <option value="subtract">subtract</option>
+            <option value="divide">divide</option>
+            <option value="multiply">numtiply</option>
+        </select>
+        <input type="submit" value="Submit">
+    </form>
+
+    <!-- Task 18 -->
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <label for="username">Username</label>
+            <input type="text" id="username" placeholder="Enter username">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter password">
+            <button type="submit">Login</button>
+            <div id="message" class="message"></div>
+        </form>
+    </div>
+    <!-- Task 19 -->
+    <h2>Guess the Number</h2>
+    <p>Guess a number between 1 and 100</p>
+    <input type="number" id="guessInput" placeholder="Enter your guess" min="1" max="100">
+    <button id="submitGuess">Submit Guess</button>
+    <div class="message" id="message"></div>
+
+    <script src="practice.js"></script>
+</body>
+
+</html>

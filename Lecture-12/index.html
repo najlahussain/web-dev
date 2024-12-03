@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="promises.js"></script>
+     <script>
+//         function getData(id, dataCallback){
+//             return new Promise((resolve,reject)=>{
+//                 setTimeout(()=>{
+//                     console.log("data: ", id);
+//                     if(id>0)
+//                         resolve("success");
+//                     else
+//                         reject("unsuccesful!");
+//                     if(dataCallback)
+//                         dataCallback();
+//                 }, 3000)
+//             });
+//         }
+
+// let result = getData(1); 
+// result.then((res)=>{console.log("promise fulfilled", res)});
+// result.catch((err)=>{console.log("promise not fulfilled", err)});
+// result.finally(()=>{console.log("finally will always execute")});
+
+
+// console.log(result);
+// console.log(result);
+// setTimeout(()=>{console.log(result);},3000)
+     </script>
+    <script>
+        //define myAsyncFn
+        function myAsyncFn(callback){
+            console.log("myAsync function started executing");
+            callback(null, 123);
+        }
+
+        //define handle(err)
+        let handle = (err) => {
+            console.log("Handling error: ",err);
+        }
+
+        //define myOtherAsyncFn
+        function myOtherAsyncFn(data, callback){
+            console.log("myOtherAsync function started executing");
+            callback(new Error("new error"), 123);
+        }
+
+        // define fun
+        function fun(data, sd, callback){
+            console.log("fun function started executing");
+            callback(new Error("new error inside fun"), 123);
+        }
+        //define fn
+        function fn(data, sd, callback){
+            console.log("fn function started executing");
+            callback(new Error("new error inside fn"), 123);
+        }
+
+        // callback HELL
+        myAsyncFn((err, data) => {
+            console.log("err: ",err);
+            console.log("data: ",data);
+            if (err) {
+                handle(err)
+            }
+           
+            myOtherAsyncFn(data, (err, secondData) => {
+                fun(data, secondData, (err) => {
+                    if (err) handle(err)
+                })
+                fn(data, secondData, (err) => {
+                    if (err) handle(err)
+                })
+            })
+        })
+    </script>
+</body>
+
+
+</html>

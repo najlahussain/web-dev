@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML5 Form Validation Example</title>
+</head>
+
+<body>
+  <h2>HTML5 Form Validation Example</h2>
+  <form>
+    <!-- Required Field -->
+    <label for="username">Username (required):</label>
+    <input type="text" id="username" name="username" required>
+    <br><br>
+
+    <!-- Minlength and Maxlength -->
+    <label for="password">Password (5-10 characters):</label>
+    <input type="password" name="password" minlength="5" maxlength="10" required>
+    <br><br>
+
+    <!-- Pattern Validation -->
+    <label for="email">Email (pattern validation):</label>
+    <input type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+    <br><br>
+
+    <!-- Submit Button -->
+    <button type="submit">Submit</button>
+  </form>
+  <form>
+    <!-- Required Field -->
+    <label for="name">Name (required):</label>
+    <input type="text" id="name" name="name">
+    <br><br>
+    <label for="email1">Email (pattern validation):</label>
+    <input type="email" id="email" name="email">
+    <br><br>
+    <label for="password">Password (5-10 characters):</label>
+    <input type="password" id="password" name="password">
+    <br><br>
+    <!-- Submit Button -->
+    <button type="submit" id="submit">Submit</button>
+  </form>
+  <script>
+    document.getElementById("submit").addEventListener("click", function (e) {
+      const name = document.getElementById("name").value;
+      console.log(name);
+      if (name.trim() === "") {
+        alert("Name cannot be empty");
+        e.preventDefault(); // Prevents form submission
+      }
+      else if (!validateEmail()) {
+        // alert("Email cannot be empty");
+        e.preventDefault(); // Prevents form submission
+      }
+      else if (!validatePassword()) {
+        //alert("Password cannot be empty");
+        e.preventDefault(); // Prevents form submission
+      }
+
+    });
+
+    function validateEmail() {
+      const email = document.getElementById("email").value;
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        alert("Please enter a valid email address.");
+        return false;
+      }
+      else return true;
+    }
+
+    function validatePassword() {
+      const password = document.getElementById("password").value;
+      const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+      if (!passwordRegex.test(password)) {
+        alert("Password must be at least 8 characters long and include letters and numbers.");
+        return false;
+      }
+      else return true;
+    }
+  </script>
+
+</body>
+
+</html>
